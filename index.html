@@ -1,0 +1,42 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<title>DataViz</title>
+<link rel="stylesheet" type="text/css" href="style.css" />
+</head>
+<body>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+<script type="text/javascript" src="jquery.dataviz.js"></script>
+<script type="text/javascript">
+	jQuery(document).ready(function($) {		
+		$('form').submit(function(e){
+			e.preventDefault();
+			var values = [];
+			$(this).find('input[type=text]').each(function(index){
+				val = ($(this).val()> 0) ? $(this).val() : 0;
+				values.push(parseFloat(val));	
+			});
+			$('#pie_graph_wrapper').DataViz({'values': values }).data('DataViz').draw_pie();
+			$('#bar_graph_wrapper').DataViz({'values': values }).data('DataViz').draw_bar();
+		});
+	});
+</script>
+<div id="wrapper">
+	<header>DataViz jQuery plugin example</header>
+	<section>
+		<div id="bar_graph_wrapper"></div>
+		<div id="pie_graph_wrapper"></div>
+		<div id="fields">
+			<form action="" method="post">
+				<input type="text" pattern="[0-9]*" name="val1" value="4" placeholder="Érték1"><br>
+				<input type="text" pattern="[0-9]*" name="val2" value="5" placeholder="Érték2"><br>
+				<input type="text" pattern="[0-9]*" name="val3" value="9" placeholder="Érték3"><br>
+				<input type="text" pattern="[0-9]*" name="val4" value="12" placeholder="Érték4"><br>
+				<input type="submit" name="submit" value="Kirajzol">
+			</form>
+		</div>
+	</section>
+</div>
+</body>
+</html>

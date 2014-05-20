@@ -1,0 +1,11 @@
+#wrapper{width: 970px; margin: 0 auto;}
+header {text-align: center;font-size: 22px;color:#397EF5;font-family: Arial;margin: 20px 0}
+section {margin:50px auto;width:100%;}
+section div{margin:5px;}
+#bar_graph_wrapper{float:left; border:1px solid #ccc;position: relative;width: 300px; height: 300px}
+	.bars{position: absolute;z-index: 1;left:0;top:0;opacity: 0.5}
+	.bars:hover{opacity: 1}
+	.bar_tooltips{position:absolute;display: none;}
+#pie_graph_wrapper{float:left; border:1px solid #ccc;position: relative;width:300px;height:300px}
+	.pieces{position: absolute;z-index: 1;left:0;top:0;}
+#fields{float:left;}
